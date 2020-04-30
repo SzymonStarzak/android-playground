@@ -37,9 +37,6 @@ dependencies {
     implementation(Libs.navigationFragmentKtx)
     implementation(Libs.navigationUiKtx)
     implementation(Libs.dagger)
-    implementation(Libs.dagger_android)
-    implementation(Libs.dagger_android_support)
     kapt(Kapt.dagger)
-    kapt(Kapt.dagger_android)
     testImplementation(TestLibs.junit)
 }
