@@ -1,0 +1,5 @@
+include (":app")
+include (":core")
+include (":feature:login")
+include (":feature:home")
+include (":coredata")
