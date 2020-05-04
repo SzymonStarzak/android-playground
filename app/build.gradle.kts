@@ -24,19 +24,32 @@ android {
             )
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
+    implementation(project(Modules.featureAuth))
     implementation(project(Modules.featureHome))
-    implementation(project(Modules.featureLogin))
+    implementation(project(Modules.featureNotes))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
-    implementation(Libs.constraintLayout)
-    implementation(Libs.navigationFragmentKtx)
     implementation(Libs.navigationUiKtx)
+
     implementation(Libs.dagger)
     kapt(Kapt.dagger)
+
+    implementation(Libs.retrofit)
+    implementation(Libs.retrofitMoshi)
+
     testImplementation(TestLibs.junit)
 }

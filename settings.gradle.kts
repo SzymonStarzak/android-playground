@@ -1,5 +1,5 @@
+include(":feature:notes")
 include (":app")
 include (":core")
-include (":feature:login")
+include (":feature:auth")
 include (":feature:home")
-include (":coredata")

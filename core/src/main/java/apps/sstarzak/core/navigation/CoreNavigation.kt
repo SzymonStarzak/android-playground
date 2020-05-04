@@ -1,7 +1,13 @@
 package apps.sstarzak.core.navigation
 
-interface LoginNavigation
+import android.content.Context
 
-interface FeatureNavigation
+interface AuthNavigation {
+    fun navigateToLogin(context: Context)
+}
 
-interface CoreNavigation : LoginNavigation, FeatureNavigation
+interface FeatureNavigation {
+    fun navigateToNotes(context: Context)
+}
+
+interface CoreNavigation : AuthNavigation, FeatureNavigation

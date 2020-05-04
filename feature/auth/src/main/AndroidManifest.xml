@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="apps.sstarzak.auth">
+
+    <application>
+        <activity android:name="apps.sstarzak.auth.ui.AuthActivity" />
+    </application>
+
+</manifest>

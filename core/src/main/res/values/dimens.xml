@@ -1,0 +1,10 @@
+<resources>
+    <!--    region spacing-->
+    <dimen name="spacing_xsmall">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">36dp</dimen>
+    <dimen name="spacing_xxlarge">48dp</dimen>
+    <!--    endregion-->
+</resources>
