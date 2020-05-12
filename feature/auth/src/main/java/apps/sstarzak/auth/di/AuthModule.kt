@@ -3,7 +3,6 @@ package apps.sstarzak.auth.di
 import apps.sstarzak.auth.data.AuthRepositoryImpl
 import apps.sstarzak.auth.data.api.AuthApi
 import apps.sstarzak.auth.repository.AuthRepository
-import apps.sstarzak.core.di.AuthScope
 import apps.sstarzak.core.env.Environment
 import dagger.Binds
 import dagger.Module

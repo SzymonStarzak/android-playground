@@ -1,8 +1,8 @@
 package apps.sstarzak.auth.repository
 
-import apps.sstarzak.auth.entity.AuthToken
-import apps.sstarzak.auth.entity.CreateUserData
-import apps.sstarzak.auth.entity.UserCredentials
+import apps.sstarzak.auth.domain.AuthToken
+import apps.sstarzak.auth.domain.CreateUserData
+import apps.sstarzak.auth.domain.UserCredentials
 import kotlinx.coroutines.flow.Flow
 
 interface AuthRepository {

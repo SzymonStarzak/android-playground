@@ -2,8 +2,8 @@ package apps.sstarzak.auth.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import apps.sstarzak.auth.di.AuthScope
 import apps.sstarzak.auth.viewmodel.AuthViewModel
-import apps.sstarzak.core.di.AuthScope
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

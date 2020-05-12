@@ -1,8 +1,9 @@
 package apps.sstarzak.playground.di
 
 import android.app.Application
-import apps.sstarzak.core.ui.BaseActivity
 import apps.sstarzak.auth.di.AuthComponent
+import apps.sstarzak.core.ui.BaseActivity
+import apps.sstarzak.notes.di.NotesComponent
 import apps.sstarzak.playground.ui.RouterActivity
 import dagger.BindsInstance
 import dagger.Component
@@ -12,6 +13,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AppModule::class,
+        NetworkModule::class,
         SubComponentModule::class
     ]
 )
@@ -26,6 +28,7 @@ interface AppComponent {
     }
 
     fun authComponent(): AuthComponent.Factory
+    fun notesComponent(): NotesComponent.Factory
 
     fun inject(baseActivity: BaseActivity)
     fun inject(routerActivity: RouterActivity)

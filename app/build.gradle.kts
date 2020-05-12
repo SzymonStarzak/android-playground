@@ -49,7 +49,10 @@ dependencies {
     kapt(Kapt.dagger)
 
     implementation(Libs.retrofit)
+    implementation(Libs.okHttpLogging)
     implementation(Libs.retrofitMoshi)
+
+    implementation(Libs.hawk)
 
     testImplementation(TestLibs.junit)
 }

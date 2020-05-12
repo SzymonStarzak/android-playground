@@ -3,7 +3,7 @@ package apps.sstarzak.core.ui
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import apps.sstarzak.core.navigation.CoreNavigation
+import apps.sstarzak.core.navigation.CoreNavigator
 import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity {
@@ -12,7 +12,7 @@ abstract class BaseActivity : AppCompatActivity {
     constructor(@LayoutRes contentLayoutId: Int) : super(contentLayoutId)
 
     @Inject
-    lateinit var coreNavigation: CoreNavigation
+    lateinit var coreNavigation: CoreNavigator
 
     abstract fun inject()
 

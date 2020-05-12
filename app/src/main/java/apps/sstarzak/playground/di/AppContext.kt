@@ -1,4 +1,4 @@
-package apps.sstarzak.core.di
+package apps.sstarzak.playground.di
 
 import javax.inject.Qualifier
 

@@ -6,16 +6,23 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import apps.sstarzak.auth.R
-import apps.sstarzak.auth.entity.AuthToken
-import apps.sstarzak.auth.entity.UserCredentials
+import apps.sstarzak.auth.di.AuthComponentProvider
+import apps.sstarzak.auth.domain.AuthToken
+import apps.sstarzak.auth.domain.UserCredentials
+import apps.sstarzak.auth.ext.saveAuthToken
 import apps.sstarzak.auth.ui.BaseAuthFragment
 import apps.sstarzak.auth.viewmodel.AuthViewModel
 import apps.sstarzak.auth.viewmodel.TokenEvent
 import apps.sstarzak.core.common.NetworkResultProcessor
+import apps.sstarzak.core.session.SessionManager
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.coroutines.InternalCoroutinesApi
+import javax.inject.Inject
 
 class LoginFragment : BaseAuthFragment(R.layout.fragment_login) {
+
+    @Inject
+    lateinit var sessionManager: SessionManager
 
     private val authViewModel: AuthViewModel by viewModels { authViewModelFactory }
 
@@ -48,8 +55,12 @@ class LoginFragment : BaseAuthFragment(R.layout.fragment_login) {
         }
     }
 
-    private fun processTokenSuccess(token: AuthToken) {
-        Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+    private fun processTokenSuccess(authToken: AuthToken) {
+        sessionManager.saveAuthToken(authToken)
+
+        (requireActivity().application as AuthComponentProvider).releaseAuthComponent()
+
+        coreNavigation.navigateToNotes(requireContext())
     }
 
     private fun processTokenError(throwable: Throwable) {

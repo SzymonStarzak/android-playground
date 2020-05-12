@@ -9,7 +9,7 @@ interface AuthApi {
     @POST("/api/jwtauth/token/")
     suspend fun getToken(@Body tokenBody: RequestTokenBody): TokenResponse
 
-    @POST("/api/jwtauth/token/")
+    @POST("/api/jwtauth/refresh/")
     suspend fun refreshToken(@Body tokenBody: RequestRefreshTokenBody): RefreshTokenResponse
 
     @POST("/api/jwtauth/register/")

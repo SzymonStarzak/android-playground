@@ -59,6 +59,7 @@ dependencies {
     // Network
     implementation(Libs.retrofit)
     implementation(Libs.retrofitMoshi)
+    implementation(Libs.okHttpLogging)
     implementation(Libs.moshi)
     kapt(Kapt.moshi)
 

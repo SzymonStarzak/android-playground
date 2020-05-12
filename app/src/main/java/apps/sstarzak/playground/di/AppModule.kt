@@ -2,15 +2,17 @@ package apps.sstarzak.playground.di
 
 import android.app.Application
 import android.content.Context
-import apps.sstarzak.core.di.AppContext
+import apps.sstarzak.auth.di.AuthComponent
 import apps.sstarzak.core.env.Environment
-import apps.sstarzak.core.navigation.CoreNavigation
-import apps.sstarzak.playground.navigation.Navigation
+import apps.sstarzak.core.navigation.CoreNavigator
+import apps.sstarzak.core.session.SessionManager
+import apps.sstarzak.core.session.TokenStore
+import apps.sstarzak.playground.navigation.Navigator
+import apps.sstarzak.playground.session.SessionManagerImpl
+import apps.sstarzak.playground.session.TokenStoreImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 @Module(
@@ -20,21 +22,31 @@ import javax.inject.Singleton
 )
 object AppModule {
 
+    @Singleton
     @Provides
     fun providesEnvironment(): Environment = Environment.LocalHost()
 
     @Provides
-    fun providesRetrofitBuilder(): Retrofit.Builder = Retrofit.Builder()
-        .addConverterFactory(MoshiConverterFactory.create())
+    @Singleton
+    fun provideSessionManager(
+        authComponentFactory: AuthComponent.Factory,
+        tokenStore: TokenStore
+    ): SessionManager =
+        SessionManagerImpl(authComponentFactory, tokenStore)
 
     @Module
     interface BindsModule {
-        @Binds
+        @Singleton
         @AppContext
+        @Binds
         fun bindsAppContext(application: Application): Context
 
-        @Binds
         @Singleton
-        fun bindsNavigation(navigation: Navigation): CoreNavigation
+        @Binds
+        fun bindsNavigator(navigator: Navigator): CoreNavigator
+
+        @Singleton
+        @Binds
+        fun bindsTokenStore(tokenStore: TokenStoreImpl): TokenStore
     }
 }

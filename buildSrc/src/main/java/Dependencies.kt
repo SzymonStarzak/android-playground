@@ -16,12 +16,14 @@ object Versions {
     const val coroutines = "1.3.5"
     const val dagger = "2.25.2"
     const val gradle = "3.6.2"
+    const val hawk = "2.0.1"
     const val junit = "4.12"
     const val kotlin = "1.3.71"
     const val lifecycle = "2.2.0"
     const val material = "1.1.0"
     const val moshi = "1.9.2"
     const val navigationKtx = "2.2.1"
+    const val okHttpLogging = "3.8.0"
     const val retrofit = "2.8.1"
     const val room = "2.2.5"
 }
@@ -52,9 +54,12 @@ object Libs {
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLogging}"
 
     const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val lifedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+
+    const val hawk = "com.orhanobut:hawk:${Versions.hawk}"
 }
 
 object Kapt {

@@ -1,4 +1,4 @@
-package apps.sstarzak.core.di
+package apps.sstarzak.auth.di
 
 import javax.inject.Scope
 

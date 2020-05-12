@@ -1,7 +1,7 @@
 package apps.sstarzak.auth.data.api.model
 
 
-import apps.sstarzak.auth.entity.AuthToken
+import apps.sstarzak.auth.domain.AuthToken
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

@@ -2,7 +2,7 @@ package apps.sstarzak.auth.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import apps.sstarzak.core.di.AuthScope
+import apps.sstarzak.auth.di.AuthScope
 import javax.inject.Inject
 import javax.inject.Provider
 

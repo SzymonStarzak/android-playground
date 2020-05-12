@@ -1,6 +1,6 @@
 package apps.sstarzak.core.env
 
-sealed class Environment(val loginBaseUrl: String, notesApiBaseUrl: String) {
+sealed class Environment(val loginBaseUrl: String, val notesApiBaseUrl: String) {
 
     class LocalHost : Environment(
         loginBaseUrl = DEV_MACHINE_LOCAL_HOST_BASE_URL,

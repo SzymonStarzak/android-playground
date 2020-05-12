@@ -1,4 +1,4 @@
-package apps.sstarzak.auth.entity
+package apps.sstarzak.auth.domain
 
 data class AuthToken(val accessToken: String, val refreshToken: String)
 
